@@ -2,6 +2,16 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork", "SocialNetwork\SocialNetwork.csproj", "{26A2CABC-C34E-4AC7-8766-5DF05E3A2A8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Application", "Core\SocialNetwork.Application\SocialNetwork.Application.csproj", "{F1930B47-6A51-4FC5-B6AC-663589F5E24D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Domain", "Core\SocialNetwork.Domain\SocialNetwork.Domain.csproj", "{BAFB54EA-0AB8-4E9E-B501-76FB82A959EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Infrastructure", "Infrastructure\SocialNetwork.Infrastructure\SocialNetwork.Infrastructure.csproj", "{1E4B074A-31E9-49AE-85B1-85A0118A86A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Persistence", "Infrastructure\SocialNetwork.Persistence\SocialNetwork.Persistence.csproj", "{80FD31E7-6CA5-4B18-ADD6-1A2582F06057}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared\Shared.csproj", "{F415A358-0B20-4253-8E99-9C12932870B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +22,25 @@ Global
 		{26A2CABC-C34E-4AC7-8766-5DF05E3A2A8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26A2CABC-C34E-4AC7-8766-5DF05E3A2A8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26A2CABC-C34E-4AC7-8766-5DF05E3A2A8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1930B47-6A51-4FC5-B6AC-663589F5E24D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1930B47-6A51-4FC5-B6AC-663589F5E24D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1930B47-6A51-4FC5-B6AC-663589F5E24D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1930B47-6A51-4FC5-B6AC-663589F5E24D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAFB54EA-0AB8-4E9E-B501-76FB82A959EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAFB54EA-0AB8-4E9E-B501-76FB82A959EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAFB54EA-0AB8-4E9E-B501-76FB82A959EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAFB54EA-0AB8-4E9E-B501-76FB82A959EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E4B074A-31E9-49AE-85B1-85A0118A86A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E4B074A-31E9-49AE-85B1-85A0118A86A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E4B074A-31E9-49AE-85B1-85A0118A86A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E4B074A-31E9-49AE-85B1-85A0118A86A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80FD31E7-6CA5-4B18-ADD6-1A2582F06057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80FD31E7-6CA5-4B18-ADD6-1A2582F06057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80FD31E7-6CA5-4B18-ADD6-1A2582F06057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80FD31E7-6CA5-4B18-ADD6-1A2582F06057}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F415A358-0B20-4253-8E99-9C12932870B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F415A358-0B20-4253-8E99-9C12932870B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F415A358-0B20-4253-8E99-9C12932870B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F415A358-0B20-4253-8E99-9C12932870B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
