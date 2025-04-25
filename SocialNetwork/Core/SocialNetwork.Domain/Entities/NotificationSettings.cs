@@ -1,6 +1,8 @@
+using SocialNetwork.Domain.Common;
+
 namespace SocialNetwork.Domain.Entities;
 
-public class NotificationSettings
+public class NotificationSettings : BaseAuditableEntity
 {
     public int UserId { get; set; }
     public bool EnableEmailNotifications { get; set; } = true;

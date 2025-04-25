@@ -1,8 +1,9 @@
+using SocialNetwork.Domain.Common;
 using SocialNetwork.Domain.Enums;
 
 namespace SocialNetwork.Domain.Entities;
 
-public class PrivacySettings
+public class PrivacySettings : BaseAuditableEntity
 {
     public int UserId { get; set; }
     public FollowerPolicy FollowerPolicy { get; set; } = FollowerPolicy.EVERYONE;

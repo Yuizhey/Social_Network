@@ -1,9 +1,10 @@
 using System.Security.AccessControl;
+using SocialNetwork.Domain.Common;
 using SocialNetwork.Domain.Enums;
 
 namespace SocialNetwork.Domain.Entities;
 
-public class UserProfileDescription
+public class UserProfileDescription : BaseAuditableEntity
 {
     public int UserId { get; set; }
     public required string UserName { get; set; }

@@ -1,6 +1,8 @@
+using SocialNetwork.Domain.Common;
+
 namespace SocialNetwork.Domain.Entities;
 
-public class NotificationPreferences
+public class NotificationPreferences : BaseAuditableEntity
 {
     public int UserId { get; set; }
     public bool NotifyOnNewMessage { get; set; } = true;
