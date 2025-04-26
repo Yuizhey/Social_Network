@@ -5,7 +5,7 @@ namespace SocialNetwork.Domain.Entities;
 
 public class UserProfileSocialLink : BaseAuditableEntity
 {
-    public int UserId { get; set; }
+    public int UserProfileId { get; set; }
     public required string SocialLinkUrl { get; set; }
     public SocialNetworkType SocialNetworkType { get; set; }
 }
