@@ -4,9 +4,8 @@ using SocialNetwork.Domain.Enums;
 
 namespace SocialNetwork.Domain.Entities;
 
-public class User : BaseAuditableEntity
+public class UserProfile : BaseAuditableEntity
 {
-    public string CurrentPassword { get; set; } = null!;
     public TwoFactorAuthenticationType TwoFactorAuthenticationType { get; set; } = TwoFactorAuthenticationType.DISABLE;
     public UserProfileDescription Description { get; set; }
     public ICollection<UserProfileSocialLink> SocialNetworkLinks { get; set; }

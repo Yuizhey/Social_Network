@@ -12,7 +12,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<NotificationPreferences> NotificationPreferences { get; set; }
     public DbSet<NotificationSettings> NotificationSettings { get; set; }
     public DbSet<PrivacySettings> PrivacySettings { get; set; }
-    public DbSet<User> Users { get; set; }
+    public DbSet<UserProfile> Users { get; set; }
     public DbSet<UserProfileDescription> UserProfileDescriptions { get; set; }
     public DbSet<UserProfileSocialLink> UserProfileSocialLinks { get; set; }
 
