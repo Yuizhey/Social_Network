@@ -1,4 +1,6 @@
+using Infrastructure.Extension;
 using Persistence.Extensions;
+using SocialNetwork.Application.Extensions;
 
 namespace SocialNetwork;
 
@@ -8,7 +10,10 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
         
+        builder.Services.AddApplicationLayer();
+        builder.Services.AddInfrastructureLayer();
         builder.Services.AddPersistenceLayer(builder.Configuration);
+        
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();

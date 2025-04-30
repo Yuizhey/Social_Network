@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Persistence.Contexts;
+using Persistence.Repositories;
+using SocialNetwork.Application.Interfaces.Repositories;
 
 namespace Persistence.Extensions;
 
@@ -24,9 +26,9 @@ public static class IServiceCollectionExtensions
 
     private static void AddRepositories(this IServiceCollection services)
     {
-        /*  services
-              .AddTransient(typeof(IUnitOfWork), typeof(UnitOfWork))
-              .AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>))
-              .AddTransient<IOrderRepository, OrderRepository>()*/
+        services
+            .AddTransient(typeof(IUnitOfWork), typeof(UnitOfWork))
+            .AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>))
+            .AddTransient<IPostRepository, PostRepository>();
     }
 }
