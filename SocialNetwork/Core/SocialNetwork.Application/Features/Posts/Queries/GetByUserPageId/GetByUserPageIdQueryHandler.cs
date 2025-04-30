@@ -22,7 +22,12 @@ public class GetByUserPageIdQueryHandler : IRequestHandler<GetByUserPageIdQuery,
             UserPageId = p.UserPageId,
             Content = p.Content,
             LikeCount = p.LikeCount,
-            DislikeCount = p.LikeCount
+            DislikeCount = p.LikeCount,
+            Comments = p.Comments.Select(c => new PostCommentDto{
+                Id = c.Id,
+                Text = c.Text,
+                UserName = c.UserProfile.Description.UserName
+            }).ToList()
         });
         
         return result ?? new List<GetByUserPageIdDto>();

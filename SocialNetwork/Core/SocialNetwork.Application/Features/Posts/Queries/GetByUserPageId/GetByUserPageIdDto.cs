@@ -1,3 +1,5 @@
+using SocialNetwork.Domain.Entities;
+
 namespace SocialNetwork.Application.Features.Posts.Queries.GetByUserPageId;
 
 public class GetByUserPageIdDto
@@ -22,4 +24,6 @@ public class GetByUserPageIdDto
     /// количество дизлайков
     /// </summary>
     public int DislikeCount { get; set; }
+
+    public List<PostCommentDto> Comments { get; set; }
 }

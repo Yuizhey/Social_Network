@@ -15,6 +15,7 @@ public class PostRepository : IPostRepository
  
     public async Task<List<Post>> GetGetByUserPageIdAll(int userPageId)
     {
-        return await _repository.Entities.Where(x => x.UserPageId == userPageId).ToListAsync();
+        return await _repository.Entities.Where(x => x.UserPageId == userPageId).Include(p => p.Comments)
+            .ThenInclude(c => c.UserProfile).ThenInclude(x => x.Description).ToListAsync();
     }
 }

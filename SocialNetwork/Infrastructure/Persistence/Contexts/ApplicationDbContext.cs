@@ -15,6 +15,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<UserProfile> UsersProfiles { get; set; }
     public DbSet<UserProfileDescription> UserProfileDescriptions { get; set; }
     public DbSet<UserProfileSocialLink> UserProfileSocialLinks { get; set; }
+    public DbSet<PostComment> PostComments { get; set; }
 
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
