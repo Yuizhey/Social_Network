@@ -43,6 +43,9 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("EventDate")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<int>("EventType")
+                        .HasColumnType("integer");
+
                     b.Property<int>("GoingCount")
                         .HasColumnType("integer");
 

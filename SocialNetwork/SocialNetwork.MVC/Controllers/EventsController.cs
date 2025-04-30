@@ -14,9 +14,9 @@ public class EventsController : Controller
         _mediator = mediator;
     }
 
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index([FromQuery]string formatType = "all")
     {
-        var query = new GetAllEventsQuery();
+        var query = new GetAllEventsQuery(formatType);
         var model = new EventVM()
         {
             Events = await _mediator.Send(query)
