@@ -1,16 +1,27 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using Persistence.Contexts;
+using SocialNetwork.Application.Features.Events.Queries.GetAllEvents;
+using SocialNetwork.Models.Events;
 
 namespace SocialNetwork.Controllers;
 
 public class EventsController : Controller
 {
-    public EventsController()
+    private readonly IMediator _mediator;
+    public EventsController(IMediator mediator)
     {
-        
+        _mediator = mediator;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        return View();
+        var query = new GetAllEventsQuery();
+        var model = new EventVM()
+        {
+            Events = await _mediator.Send(query)
+        };
+        
+        return View(model);
     }
 }

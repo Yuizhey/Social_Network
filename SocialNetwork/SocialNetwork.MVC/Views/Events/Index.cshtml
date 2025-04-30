@@ -1,4 +1,10 @@
-﻿<main id="site__main" class="2xl:ml-[--w-side]  xl:ml-[--w-side-sm] p-2.5 h-[calc(100vh-var(--m-top))] mt-[--m-top]">
+﻿@model SocialNetwork.Models.Events.EventVM
+
+@{
+    ViewData["Title"] = "Events Page";
+}
+
+<main id="site__main" class="2xl:ml-[--w-side]  xl:ml-[--w-side-sm] p-2.5 h-[calc(100vh-var(--m-top))] mt-[--m-top]">
 
     <div class="lg:flex 2xl:gap-12 gap-10 2xl:max-w-[1220px] max-w-[1065px] mx-auto" id="js-oversized">
 
@@ -18,7 +24,7 @@
                             <li>
                                 <button type="button" class="button p-2 px-3 bg-white shadow-sm gap-1 border1 dark:bg-slate-700 group">
                                     <ion-icon name="location-outline" class="text-lg"></ion-icon>
-                                    My location
+                                    Type of Event
                                     <ion-icon name="chevron-down-outline" class="duration-300 -mr-0.5 text-base group-aria-expanded:rotate-180"></ion-icon>
                                 </button>
                                 <div  class="p-3 bg-white rounded-lg drop-shadow-xl border2 dark:bg-dark3 w-64"
@@ -30,7 +36,7 @@
                                             <input type="radio" name="radio-location" class="peer appearance-none hidden" checked/>
                                             <div class=" relative flex items-center gap-3  cursor-pointer rounded-md p-2  hover:bg-secondery peer-checked:[&_.active]:block dark:bg-dark3">
                                                 <ion-icon name="navigate" class="text-lg"></ion-icon>
-                                                <div class="text-sm"> My location </div>
+                                                <div class="text-sm"> Offline </div>
                                                 <ion-icon name="checkmark-circle" class="hidden active absolute -translate-y-1/2 right-2 text-2xl ml-auto text-blue-600 uk-animation-scale-up"></ion-icon>
                                             </div>
                                         </label>
@@ -129,6 +135,37 @@
 
                 <!-- card list  -->
                 <div class="box p-5">
+                    
+                    @foreach (var item in Model.Events)
+                    {
+                        <div class="card-list">
+                            <a href="timeline-event.html">
+                                <div class="card-list-media md:w-40 md:h-full w-full h-36">
+                                    <img src="assets/images/events/img-1.jpg" alt="">
+                                </div>
+                            </a>
+                            <div class="md:flex gap-10 md:items-end flex-1">
+                                <div class="card-list-body">
+                                    <P class="text-xs font-medium  text-red-600 mb-1">@item.EventDate</P>
+                                    <a href="timeline-event.html">
+                                        <h3 class="card-list-title text-base line-clamp-1">@item.Title</h3>
+                                    </a>
+                                    <P class="text-xs font-medium mb-1 mt-3 text-black dark:text-white">@item.Author</P>
+                                    <div class="card-list-info text-xs">
+                                        <div> @item.InterestedCount Interested</div>
+                                        <div class="md:block hidden">·</div>
+                                        <div> @item.GoingCount going</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-2 self-end pt-2 sm:justify-end">
+                                    <button type="button" class="button bg-secondery max-sm:flex-1">Interested </button>
+                                    <button type="button" class="button bg-secondery px-2.5 py-2"> <ion-icon name="arrow-redo" class="text-base"></ion-icon> </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="card-list-divider">
+                    }
 
                     <div class="card-list">
                         <a href="timeline-event.html">
@@ -140,7 +177,7 @@
                             <div class="card-list-body">
                                 <P class="text-xs font-medium  text-red-600 mb-1"> WED JUL 10,2024 AT 10PM </P>
                                 <a href="timeline-event.html">
-                                    <h3 class="card-list-title text-base line-clamp-1"> The global creative  </h3>
+                                    <h3 class="card-list-title text-base line-clamp-1"> The global creative </h3>
                                 </a>
                                 <P class="text-xs font-medium mb-1 mt-3 text-black dark:text-white">UK BRANDS</P>
                                 <div class="card-list-info text-xs">
@@ -168,7 +205,7 @@
                             <div class="card-list-body">
                                 <P class="text-xs font-medium  text-teal-600 mb-1"> Upcomming </P>
                                 <a href="timeline-event.html">
-                                    <h3 class="card-list-title text-base line-clamp-1"> Wedding trend Ideas  </h3>
+                                    <h3 class="card-list-title text-base line-clamp-1"> Wedding trend Ideas </h3>
                                 </a>
                                 <P class="text-xs font-medium mb-1 mt-3 text-black dark:text-white">Catiana</P>
                                 <div class="card-list-info text-xs">
@@ -196,7 +233,7 @@
                             <div class="card-list-body">
                                 <P class="text-xs font-medium  text-blue-600 mb-1"> Next week </P>
                                 <a href="timeline-event.html">
-                                    <h3 class="card-list-title text-base line-clamp-1"> About Safety and Flight  </h3>
+                                    <h3 class="card-list-title text-base line-clamp-1"> About Safety and Flight </h3>
                                 </a>
                                 <P class="text-xs font-medium mb-1 mt-3 text-black dark:text-white">Morleam</P>
                                 <div class="card-list-info text-xs">
@@ -224,7 +261,7 @@
                             <div class="card-list-body">
                                 <P class="text-xs font-medium  text-red-600 mb-1"> Tomorrow </P>
                                 <a href="timeline-event.html">
-                                    <h3 class="card-list-title text-base line-clamp-1"> Perspective is everything  </h3>
+                                    <h3 class="card-list-title text-base line-clamp-1"> Perspective is everything </h3>
                                 </a>
                                 <P class="text-xs font-medium mb-1 mt-3 text-black dark:text-white">UK BRANDS</P>
                                 <div class="card-list-info text-xs">
@@ -252,7 +289,7 @@
                             <div class="card-list-body">
                                 <P class="text-xs font-medium  text-red-600 mb-1"> WED JUL 10,2024 AT 10PM </P>
                                 <a href="timeline-event.html">
-                                    <h3 class="card-list-title text-base line-clamp-1"> The global creative  </h3>
+                                    <h3 class="card-list-title text-base line-clamp-1"> The global creative </h3>
                                 </a>
                                 <P class="text-xs font-medium mb-1 mt-3 text-black dark:text-white">UK BRANDS</P>
                                 <div class="card-list-info text-xs">
@@ -280,7 +317,7 @@
                             <div class="card-list-body">
                                 <P class="text-xs font-medium  text-teal-600 mb-1"> Upcomming </P>
                                 <a href="timeline-event.html">
-                                    <h3 class="card-list-title text-base line-clamp-1"> Wedding trend Ideas  </h3>
+                                    <h3 class="card-list-title text-base line-clamp-1"> Wedding trend Ideas </h3>
                                 </a>
                                 <P class="text-xs font-medium mb-1 mt-3 text-black dark:text-white">Catiana</P>
                                 <div class="card-list-info text-xs">
