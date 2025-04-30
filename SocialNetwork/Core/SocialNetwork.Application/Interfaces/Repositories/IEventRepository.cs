@@ -1,9 +1,10 @@
 using SocialNetwork.Application.Features.Events.Queries.GetAllEvents;
 using SocialNetwork.Domain.Entities;
+using SocialNetwork.Domain.Enums;
 
 namespace SocialNetwork.Application.Interfaces.Repositories;
 
 public interface IEventRepository
 {
-    // Task<List<Event>> GetAllEvents();
+    Task<IEnumerable<Event>> GetAllEventsWithFormatFilter(EventType format);
 }

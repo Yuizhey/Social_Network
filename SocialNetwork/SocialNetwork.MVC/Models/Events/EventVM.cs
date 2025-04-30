@@ -5,4 +5,5 @@ namespace SocialNetwork.Models.Events;
 public class EventVM
 {
     public IEnumerable<GetAllEventsDto> Events { get; set; }
+    public string CurrentFormatType { get; set; } 
 }

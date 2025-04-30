@@ -1,21 +1,23 @@
 using MediatR;
 using SocialNetwork.Application.Interfaces.Repositories;
 using SocialNetwork.Domain.Entities;
+using SocialNetwork.Domain.Enums;
 
 namespace SocialNetwork.Application.Features.Events.Queries.GetAllEvents;
 
 public class GetAllEventsQueryHandler : IRequestHandler<GetAllEventsQuery, IEnumerable<GetAllEventsDto>>
 {
-    private readonly IGenericRepository<Event> repository;
+    private readonly IEventRepository repository;
 
-    public GetAllEventsQueryHandler(IGenericRepository<Event> repository)
+    public GetAllEventsQueryHandler(IEventRepository repository)
     {
         this.repository = repository;
     }
     
     public async Task<IEnumerable<GetAllEventsDto>> Handle(GetAllEventsQuery request, CancellationToken cancellationToken)
     {
-        var data = await repository.GetAllAsync();
+        var format = (EventType)Enum.Parse(typeof(EventType), request.formatType.ToUpper(), ignoreCase: true);
+        var data = await repository.GetAllEventsWithFormatFilter(format);
         
         var result = data.Select(e => new GetAllEventsDto
         {
