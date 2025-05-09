@@ -18,6 +18,6 @@ public class EventRepository : IEventRepository
 
     public async Task<IEnumerable<Event>> GetAllEventsWithFormatFilter(EventType format)
     {
-        return await repository.Entities.Where(e => e.EventType == format).ToListAsync();
+        return await repository.Entities.Where(e => e.EventType == format).OrderBy(d => d.EventDate).ToListAsync();
     }
 }
